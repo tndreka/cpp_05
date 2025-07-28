@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/28 14:10:40 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/28 22:07:36 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ Bureaucrat::~Bureaucrat()
 
 //Parameter Constructor
 
-Bureaucrat::Bureaucrat(const std::string& name) : _name(name)
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
 {
+	setGrade(grade);
 	std::cout << "Bureaucrat Parameter constructor called" << std::endl;
 }
 
@@ -57,13 +58,32 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::setGrade(int n)
 {
+	if (n < 1)
+		throw GradeTooHigh();
+	else if ( n > 150)
+		throw GradeTooLow();
 	grade = n;
 }
 
-// const char* Bureaucrat::GradeTooLow::what() const noexcept
-// {
-// 	if (grade > 150)
-// 	{
-// 		std::cout << "GradeTooLow" << std::endl;
-// 	}
-// }
+/*
+	!! Exceptions !!
+	->An exception is a problem that occours in the execution time of the program.
+	->We response to an exception circumstance that happend in the ET(execution time).
+	-> Try:
+			A block of code that will activate the exceptions;
+	-> Catch:
+			This will catch the exception that we did in the "try" block of code and redirect to the
+			exception handler for the exception cas.
+	-> throw: 
+			Program throw the exception when the problem shows up.
+*/
+const char* Bureaucrat::GradeTooLow::what() const noexcept
+{
+	return "Grade Too Low";
+}
+
+const char* Bureaucrat::GradeTooHigh::what() const noexcept
+{
+	return "Grade Too High";
+}
+
