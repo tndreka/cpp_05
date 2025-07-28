@@ -6,23 +6,20 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/28 13:52:31 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/28 14:10:40 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-Bureaucrat::Bureaucrat()
+//DEFAULT CANONICAL FORM
+Bureaucrat::Bureaucrat() : _name(""), grade(150)
 {
 	std::cout << "Default Bureaucrat constructor called" << std::endl;
-	_name = "";
-	grade = 150;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other)
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), grade(other.grade)
 {
 	std::cout << "Bureaucrat Copy constructor called" << std::endl;
-	*this = other;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
@@ -30,10 +27,10 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 	std::cout << "Bureaucrat Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		this->_name = other._name;
+		// this->_name = other._name;
 		this->grade = other.grade;
 	}
-	return * this;
+	return *this;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -41,14 +38,26 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat Destructor called" << std::endl;
 }
 
-std::string Bureaucrat::getName()
+//Parameter Constructor
+
+Bureaucrat::Bureaucrat(const std::string& name) : _name(name)
+{
+	std::cout << "Bureaucrat Parameter constructor called" << std::endl;
+}
+
+std::string Bureaucrat::getName() const
 {
 	return _name;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return grade;
+}
+
+void Bureaucrat::setGrade(int n)
+{
+	grade = n;
 }
 
 // const char* Bureaucrat::GradeTooLow::what() const noexcept
