@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:12 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/27 20:45:50 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/28 13:51:25 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Bureaucrat
 {   
 	private:
-	std::string _name;
+	const std::string _name;
 	int grade;
 	// void setName(std::string str);
 	// void setGrade(int n);
@@ -29,9 +29,12 @@ class Bureaucrat
     Bureaucrat(const Bureaucrat& other);
     Bureaucrat& operator=(const Bureaucrat& other);
     ~Bureaucrat();
+	//Getters
 	std::string getName();
 	int getGrade();
-	
+	//
+	void grade_checker(const Bureaucrat &grade);
+	//exception
 	class GradeTooHigh : public std::exception
 	{
 		public:

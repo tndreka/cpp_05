@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/28 13:16:54 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/28 13:52:31 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,21 @@ Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Bureaucrat Destructor called" << std::endl;
 }
+
+std::string Bureaucrat::getName()
+{
+	return _name;
+}
+
+int Bureaucrat::getGrade()
+{
+	return grade;
+}
+
+// const char* Bureaucrat::GradeTooLow::what() const noexcept
+// {
+// 	if (grade > 150)
+// 	{
+// 		std::cout << "GradeTooLow" << std::endl;
+// 	}
+// }
