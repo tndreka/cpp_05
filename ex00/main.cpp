@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/30 15:07:11 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/30 15:25:28 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int main()
 	try
 	{
 		Bureaucrat b("lanti", 150);
-		std:: cout << "Name : " << b.getName() << std::endl;
-		std::cout << "GRADE: " << b.getGrade() << std::endl;
+		std:: cout << b << std::endl;
 
 	}
 	catch(std::exception& e)
@@ -28,8 +27,7 @@ int main()
 	try
 	{
 		Bureaucrat a("Eni", -1);
-		std:: cout << "Name : " << a.getName() << std::endl;
-		std::cout << "GRADE: " << a.getGrade() << std::endl;
+		std:: cout << a << std::endl;
 	}
 	catch(std::exception& e)
 	{
@@ -38,12 +36,11 @@ int main()
 	try
 	{
 		Bureaucrat t("lanti", 2);
-		std:: cout << "Name : " << t.getName() << std::endl;
-		std::cout << "GRADE: " << t.getGrade() << std::endl;
+		std:: cout << t << std::endl;
 		t.increment();
-		std::cout << "GRADE: " << t.getGrade() << std::endl;
+		std:: cout << t << std::endl;
 		t.increment();
-		std::cout << "GRADE: " << t.getGrade() << std::endl;
+		std:: cout << t << std::endl;
 	}
 	catch(const std::exception& e)
 	{

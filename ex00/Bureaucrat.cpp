@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/30 15:14:46 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/30 15:23:10 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,10 @@ int Bureaucrat::decrement()
 	if (grade <= 150)
 		throw GradeTooHigh();
 	return ++grade;
+}
+
+std::ostream& operator<<(std::ostream& os,const Bureaucrat& b )
+{
+	os << b.getName() << ", Bureaucrat grade: " << b.getGrade() << ".";
+	return os;
 }

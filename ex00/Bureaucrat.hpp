@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:12 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/28 22:26:25 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/30 15:21:39 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ class Bureaucrat
 				virtual const char* what() const noexcept;		
 		};
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 #endif
