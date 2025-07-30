@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/28 22:11:15 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/30 15:07:11 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,20 @@ int main()
 	{
 		std::cerr << "Exception: " << e.what() << std::endl;		
 	}
+	try
+	{
+		Bureaucrat t("lanti", 2);
+		std:: cout << "Name : " << t.getName() << std::endl;
+		std::cout << "GRADE: " << t.getGrade() << std::endl;
+		t.increment();
+		std::cout << "GRADE: " << t.getGrade() << std::endl;
+		t.increment();
+		std::cout << "GRADE: " << t.getGrade() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
     return 0;
 }
