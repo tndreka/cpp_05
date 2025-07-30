@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:12 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/28 22:08:51 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/28 22:26:25 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,32 @@
 class Bureaucrat
 {   
 	private:
-	const std::string _name;
-	int grade;
-	// void setName(std::string str);
-	// void setGrade(int n);
+		const std::string _name;
+		int grade;
     public:
-    Bureaucrat();
-	Bureaucrat(const std::string& name, int grade);
-    Bureaucrat(const Bureaucrat& other);
-    Bureaucrat& operator=(const Bureaucrat& other);
-    ~Bureaucrat();
+    	Bureaucrat();
+    	Bureaucrat(const Bureaucrat& other);
+    	Bureaucrat& operator=(const Bureaucrat& other);
+    	~Bureaucrat();
+		Bureaucrat(const std::string& name, int grade);
 	//Getters
-	std::string getName() const;
-	int getGrade() const;
-	//setter
-	void setGrade(int n);
-	//throw exceptions
-	void grade_checker();
-	//exception
-	class GradeTooHigh : public std::exception
-	{
-		public:
-			virtual const char* what() const noexcept;		
-	};
-	class GradeTooLow : public std::exception
-	{
-		public:
-			virtual const char* what() const noexcept;		
-	};
+		std::string getName() const;
+		int getGrade() const;
+	//Setter
+		void setGrade(int n);
+	//Increment & Decrement
+		int increment();
+		int decrement();
+	//Exception
+		class GradeTooHigh : public std::exception
+		{
+			public:
+				virtual const char* what() const noexcept;		
+		};
+		class GradeTooLow : public std::exception
+		{
+			public:
+				virtual const char* what() const noexcept;		
+		};
 };
 #endif
