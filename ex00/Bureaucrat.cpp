@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/28 22:07:36 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/07/30 15:14:46 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,3 +87,16 @@ const char* Bureaucrat::GradeTooHigh::what() const noexcept
 	return "Grade Too High";
 }
 
+int Bureaucrat::increment()
+{	
+	if (grade <= 1)
+		throw GradeTooHigh();
+	return --grade;
+}
+
+int Bureaucrat::decrement()
+{
+	if (grade <= 150)
+		throw GradeTooHigh();
+	return ++grade;
+}
