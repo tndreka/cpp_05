@@ -6,11 +6,13 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/31 16:01:52 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/02 15:55:28 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 //DEFAULT CANONICAL FORM
 Bureaucrat::Bureaucrat() : _name(""), grade(150)
 {
@@ -105,4 +107,18 @@ std::ostream& operator<<(std::ostream& os,const Bureaucrat& b )
 {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
 	return os;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr <<_name << " couldn't sign " << form.getName() << " because " << e.what() << '\n';
+	}
+	
 }
