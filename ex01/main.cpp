@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 16:21:38 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/02 16:26:04 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,5 +182,23 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	std::cout << " ------- TEST 6 -------------\n";
+	try
+	{
+		Bureaucrat ceo("CEO", 1);
+		Form		boss("BOSS", 50, 50);
+		
+		std::cout << ceo << std::endl;
+		std::cout << boss << std::endl;
+
+		ceo.signForm(boss);
+		std::cout << boss << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	
     return 0;
 }
