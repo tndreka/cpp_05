@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:06:49 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 13:39:15 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/02 13:53:39 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ public:
 	};
 };
 
-std::ostream& operator<<(std::ostream& f, bool isSigned);
+std::ostream& operator<<(std::ostream& os, Form& f);
 #endif
