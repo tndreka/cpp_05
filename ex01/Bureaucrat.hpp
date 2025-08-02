@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:12 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/30 15:21:39 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/02 15:49:02 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 #include <iostream>
 #include <string>
 
-class Bureaucrat
+class Form; //Forward declaration only
+
+class Bureaucrat 
 {   
 	private:
 		const std::string _name;
@@ -46,6 +48,8 @@ class Bureaucrat
 			public:
 				virtual const char* what() const noexcept;		
 		};
+	//Sign Form()
+	void signForm(Form& form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
