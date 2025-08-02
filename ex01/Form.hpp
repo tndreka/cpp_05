@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:06:49 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/01 14:34:27 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/02 13:13:42 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,21 @@ public:
 	Form& operator=(const Form& other);
 	~Form();
 	void beSigned(const Bureaucrat& b);
-	
-	std::string getName();
-	bool isSigned();
+	//getters
+	std::string getName() const;
+	bool getSigned() const;
 	int getSignedGrade();
 	int getExecGrade();
-
+	//exception class
 	class GradeTooHigh : public std::exception
 	{
-		
+		public:
+			virtual const char* what() const noexcept;	
 	};
-	class GradeTooHigh : public std::exception
+	class GradeTooLow : public std::exception
 	{
-		
+		public:
+			virtual const char* what() const noexcept;	
 	};
 };
 
