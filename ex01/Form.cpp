@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:06:45 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 13:46:21 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/02 16:01:20 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,10 @@ int Form::getExecGrade() const
 
 void Form::beSigned(const Bureaucrat& b)
 {
+	if(b.getGrade() <= signGrade)
+		isSigned = true;
+	if(b.getGrade() > signGrade)
+		throw GradeTooLow();
 	
 }
 
@@ -89,4 +93,15 @@ const char* Form::GradeTooHigh::what() const noexcept
 const char* Form::GradeTooLow::what() const noexcept
 {
 	return "Grade Too Low";	
+}
+
+std::ostream& operator<<(std::ostream& os, Form& f)
+{
+	
+	os << "Form: " << f.getName(); 
+	if (f.getSigned())
+		os << " Signed \n";
+	else
+		os << " Unsigned \n";
+	return os;
 }
