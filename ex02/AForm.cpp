@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:06:45 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 17:35:38 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/03 18:31:16 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,11 @@ const char* AForm::GradeTooLow::what() const noexcept
 	return "Grade Too Low";	
 }
 
+const char* AForm::FormNotSignedException::what() const noexcept
+{
+	return "Form Not Signed";
+}
+
 std::ostream& operator<<(std::ostream& os, AForm& f)
 {
 	
@@ -104,4 +109,12 @@ std::ostream& operator<<(std::ostream& os, AForm& f)
 	else
 		os << " Unsigned \n";
 	return os;
+}
+
+void AForm::execute(Bureaucrat const & executor) const 
+{
+	if (isSigned == false)
+		throw FormNotSignedException();
+	if (executor.getGrade() > execGrade)
+		throw GradeTooLow();	
 }

@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:06:49 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 17:39:37 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/03 18:26:54 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ public:
 	class GradeTooLow : public std::exception
 	{
 		public:
+			virtual const char* what() const noexcept;	
+	};
+	class FormNotSignedException : public std::exception
+	{
+		public: 
 			virtual const char* what() const noexcept;	
 	};
 };

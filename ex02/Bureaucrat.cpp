@@ -6,12 +6,12 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 15:55:28 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/03 18:23:27 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 //DEFAULT CANONICAL FORM
 Bureaucrat::Bureaucrat() : _name(""), grade(150)
@@ -109,7 +109,7 @@ std::ostream& operator<<(std::ostream& os,const Bureaucrat& b )
 	return os;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
 	try
 	{
