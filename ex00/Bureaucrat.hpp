@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
+/*   By: tndreka <tndreka@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:12 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/30 15:21:39 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/02 22:08:50 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
