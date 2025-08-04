@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 17:23:09 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/04 16:42:22 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/04 16:48:07 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ PresidentialPardonForm::PresidentialPardonForm()
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target_name)
 : AForm("PresidentialPardonForm", 25, 5), target(target_name)
 {
-	std::cout << "PresidentialPardonForm Default constructor called\n";
+	std::cout << "PresidentialPardonForm Parameter constructor called\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
@@ -48,5 +48,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
+	AForm::execute(executor);
 	
+	std::cout << target << "has been pardoned by Zaphod Beeblebrox \n";
 }
