@@ -6,13 +6,15 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/04 15:23:28 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/04 17:54:05 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -200,6 +202,7 @@ int main()
 	// }
 	
 	std::cout << " ------- TEST SHRUBBERY -------------\n";
+	std::cout << " ------- TEST 1 -------------\n";
 	try
 	{
 		Bureaucrat scenario_one("One", 100);
@@ -212,6 +215,104 @@ int main()
 		std::cout << shrub << std::endl;
 		
 		scenario_one.executeForm(shrub);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << " ------- TEST 2 -------------\n";
+	try
+	{
+		Bureaucrat scenario_two("Two", 138);
+		ShrubberyCreationForm shrubb("bureaucrat");
+		
+		std::cout << scenario_two << std::endl;
+		std::cout << shrubb << std::endl;
+
+		scenario_two.signForm(shrubb);
+		std::cout << shrubb << std::endl;
+		
+		scenario_two.executeForm(shrubb);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << " ------- TEST ROBOTOMY -------------\n";
+	std::cout << " ------- TEST 1 -------------\n";
+	try
+	{
+		Bureaucrat worker("Worker", 44);
+		RobotomyRequestForm job("Worker");
+
+		Bureaucrat boss("Boss", 5);
+		RobotomyRequestForm jobless("Boss");
+
+		std::cout << worker << std::endl;
+		std::cout << job << std::endl;
+		
+		worker.signForm(job);
+		std::cout << job << std::endl;
+		worker.executeForm(job);
+
+		std::cout << boss << std::endl;
+		std::cout << jobless << std::endl;
+		
+		boss.signForm(jobless);
+		std::cout << jobless << std::endl;
+		boss.executeForm(jobless);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	std::cout << " ------- TEST 2 -------------\n";
+	try
+	{
+		Bureaucrat doc("Doctor", 46);
+		RobotomyRequestForm patient("Doctor");
+		std::cout << doc << std::endl;
+		std::cout << patient << std::endl;
+		
+		doc.signForm(patient);
+		std::cout << patient << std::endl;
+		doc.executeForm(patient);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	std::cout << " ------- TEST PRESIDENTIAL -------------\n";
+	std::cout << " ------- TEST 1 -------------\n";
+	try
+	{
+		Bureaucrat judge("Judge", 1);
+		PresidentialPardonForm sentance("Juge");
+		std::cout << judge << std::endl;
+		std::cout << sentance << std::endl;
+		
+		judge.signForm(sentance);
+		std::cout << sentance << std::endl;
+		judge.executeForm(sentance);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	std::cout << " ------- TEST 2 -------------\n";
+	try
+	{
+		Bureaucrat convict("Convict", 6);
+		PresidentialPardonForm akon("Convict");
+		std::cout << convict << std::endl;
+		std::cout << akon << std::endl;
+		
+		convict.signForm(akon);
+		std::cout << akon << std::endl;
+		convict.executeForm(akon);
 	}
 	catch(const std::exception& e)
 	{
