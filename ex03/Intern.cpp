@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:35:27 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/05 15:58:14 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/05 16:25:00 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ Intern::Intern(const Intern& other)
 
 Intern& Intern::operator=(const Intern& other)
 {
-	std::cout<< "Intern Copy assignment operator called" <<std::endl;	
+	std::cout<< "Intern Copy assignment operator called" <<std::endl;
+	return *this;
 }
 
 Intern::~Intern()
@@ -38,5 +39,15 @@ Intern::~Intern()
 
 AForm* Intern::makeForm(std::string form_name, std::string form_target) const
 {
-	
+	std::string forms[3] = {"Shrubbery Creation", "Presidential Pardon", "Robotomy Request"};
+	int flag = -1;
+
+	//check if we encounter one of the forms;
+	/*
+		-1 + ((the form_name == forms[i] return 0 or 1) + (0, 1, 2 + 1)
+	*/
+	for (int i = 0; i < 3; i++)
+	{
+		flag = flag +((form_name == forms[i]) * (i + 1));
+	}
 }
