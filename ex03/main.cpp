@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/04 17:54:05 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/05 16:38:29 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -201,66 +202,131 @@ int main()
 	// 	std::cerr << e.what() << '\n';
 	// }
 	
-	std::cout << " ------- TEST SHRUBBERY -------------\n";
-	std::cout << " ------- TEST 1 -------------\n";
+	// std::cout << " ------- TEST SHRUBBERY -------------\n";
+	// std::cout << " ------- TEST 1 -------------\n";
+	// try
+	// {
+	// 	Bureaucrat scenario_one("One", 100);
+	// 	ShrubberyCreationForm shrub("bureaucrat");
+		
+	// 	std::cout << scenario_one << std::endl;
+	// 	std::cout << shrub << std::endl;
+
+	// 	scenario_one.signForm(shrub);
+	// 	std::cout << shrub << std::endl;
+		
+	// 	scenario_one.executeForm(shrub);
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+	// std::cout << " ------- TEST 2 -------------\n";
+	// try
+	// {
+	// 	Bureaucrat scenario_two("Two", 138);
+	// 	ShrubberyCreationForm shrubb("bureaucrat");
+		
+	// 	std::cout << scenario_two << std::endl;
+	// 	std::cout << shrubb << std::endl;
+
+	// 	scenario_two.signForm(shrubb);
+	// 	std::cout << shrubb << std::endl;
+		
+	// 	scenario_two.executeForm(shrubb);
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+	// std::cout << " ------- TEST ROBOTOMY -------------\n";
+	// std::cout << " ------- TEST 1 -------------\n";
+	// try
+	// {
+	// 	Bureaucrat worker("Worker", 44);
+	// 	RobotomyRequestForm job("Worker");
+
+	// 	Bureaucrat boss("Boss", 5);
+	// 	RobotomyRequestForm jobless("Boss");
+
+	// 	std::cout << worker << std::endl;
+	// 	std::cout << job << std::endl;
+		
+	// 	worker.signForm(job);
+	// 	std::cout << job << std::endl;
+	// 	worker.executeForm(job);
+
+	// 	std::cout << boss << std::endl;
+	// 	std::cout << jobless << std::endl;
+		
+	// 	boss.signForm(jobless);
+	// 	std::cout << jobless << std::endl;
+	// 	boss.executeForm(jobless);
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+	
+	// std::cout << " ------- TEST 2 -------------\n";
+	// try
+	// {
+	// 	Bureaucrat doc("Doctor", 46);
+	// 	RobotomyRequestForm patient("Doctor");
+	// 	std::cout << doc << std::endl;
+	// 	std::cout << patient << std::endl;
+		
+	// 	doc.signForm(patient);
+	// 	std::cout << patient << std::endl;
+	// 	doc.executeForm(patient);
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+	
+	// std::cout << " ------- TEST PRESIDENTIAL -------------\n";
+	// std::cout << " ------- TEST 1 -------------\n";
+	// try
+	// {
+	// 	Bureaucrat judge("Judge", 1);
+	// 	PresidentialPardonForm sentance("Juge");
+	// 	std::cout << judge << std::endl;
+	// 	std::cout << sentance << std::endl;
+		
+	// 	judge.signForm(sentance);
+	// 	std::cout << sentance << std::endl;
+	// 	judge.executeForm(sentance);
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+	
+	// std::cout << " ------- TEST 2 -------------\n";
+	// try
+	// {
+	// 	Bureaucrat convict("Convict", 6);
+	// 	PresidentialPardonForm akon("Convict");
+	// 	std::cout << convict << std::endl;
+	// 	std::cout << akon << std::endl;
+		
+	// 	convict.signForm(akon);
+	// 	std::cout << akon << std::endl;
+	// 	convict.executeForm(akon);
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
+	
+	std::cout << " ------- INTERN TESTS -------------\n";
+	std::cout << " ------- TEST 1 SUBJECT -------------\n";
 	try
 	{
-		Bureaucrat scenario_one("One", 100);
-		ShrubberyCreationForm shrub("bureaucrat");
-		
-		std::cout << scenario_one << std::endl;
-		std::cout << shrub << std::endl;
-
-		scenario_one.signForm(shrub);
-		std::cout << shrub << std::endl;
-		
-		scenario_one.executeForm(shrub);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << " ------- TEST 2 -------------\n";
-	try
-	{
-		Bureaucrat scenario_two("Two", 138);
-		ShrubberyCreationForm shrubb("bureaucrat");
-		
-		std::cout << scenario_two << std::endl;
-		std::cout << shrubb << std::endl;
-
-		scenario_two.signForm(shrubb);
-		std::cout << shrubb << std::endl;
-		
-		scenario_two.executeForm(shrubb);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << " ------- TEST ROBOTOMY -------------\n";
-	std::cout << " ------- TEST 1 -------------\n";
-	try
-	{
-		Bureaucrat worker("Worker", 44);
-		RobotomyRequestForm job("Worker");
-
-		Bureaucrat boss("Boss", 5);
-		RobotomyRequestForm jobless("Boss");
-
-		std::cout << worker << std::endl;
-		std::cout << job << std::endl;
-		
-		worker.signForm(job);
-		std::cout << job << std::endl;
-		worker.executeForm(job);
-
-		std::cout << boss << std::endl;
-		std::cout << jobless << std::endl;
-		
-		boss.signForm(jobless);
-		std::cout << jobless << std::endl;
-		boss.executeForm(jobless);
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	}
 	catch(const std::exception& e)
 	{
@@ -268,56 +334,8 @@ int main()
 	}
 	
 	std::cout << " ------- TEST 2 -------------\n";
-	try
-	{
-		Bureaucrat doc("Doctor", 46);
-		RobotomyRequestForm patient("Doctor");
-		std::cout << doc << std::endl;
-		std::cout << patient << std::endl;
-		
-		doc.signForm(patient);
-		std::cout << patient << std::endl;
-		doc.executeForm(patient);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	std::cout << " ------- TEST PRESIDENTIAL -------------\n";
-	std::cout << " ------- TEST 1 -------------\n";
-	try
-	{
-		Bureaucrat judge("Judge", 1);
-		PresidentialPardonForm sentance("Juge");
-		std::cout << judge << std::endl;
-		std::cout << sentance << std::endl;
-		
-		judge.signForm(sentance);
-		std::cout << sentance << std::endl;
-		judge.executeForm(sentance);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	std::cout << " ------- TEST 2 -------------\n";
-	try
-	{
-		Bureaucrat convict("Convict", 6);
-		PresidentialPardonForm akon("Convict");
-		std::cout << convict << std::endl;
-		std::cout << akon << std::endl;
-		
-		convict.signForm(akon);
-		std::cout << akon << std::endl;
-		convict.executeForm(akon);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
+	std::cout << " ------- TEST 3 -------------\n";
+	std::cout << " ------- TEST 4 -------------\n";
+	std::cout << " ------- TEST 5 -------------\n";
     return 0;
 }
