@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 17:23:09 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/04 16:48:07 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/05 17:33:37 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	AForm::execute(executor);
 	
-	std::cout << target << "has been pardoned by Zaphod Beeblebrox \n";
+	std::cout << target << " has been pardoned by Zaphod Beeblebrox \n";
 }

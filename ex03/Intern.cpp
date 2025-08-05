@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:35:27 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/05 17:26:10 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/05 17:33:01 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ AForm* Intern::makeForm(std::string form_name, std::string form_target) const
 	switch (flag)
 	{
 		case 0:
-			std::cout << "Interns creates " << form_name << std::endl; 
+			std::cout << "Intern creates " << form_name << std::endl; 
 			return new ShrubberyCreationForm(form_target);
 		case 1: 
-			std::cout << "Interns creates " << form_name << std::endl;
+			std::cout << "Intern creates " << form_name << std::endl;
 			return new PresidentialPardonForm(form_target);
 		case 2:
-			std::cout << "Interns creates " << form_name << std::endl; 
+			std::cout << "Intern creates " << form_name << std::endl; 
 			return new RobotomyRequestForm(form_target);
 		default:
 			std::cout << "Error: Form " << form_name << " does not exist!" <<std::endl; 
