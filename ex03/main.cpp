@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/05 16:38:29 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/05 17:04:51 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -326,7 +326,7 @@ int main()
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
 	}
 	catch(const std::exception& e)
 	{
