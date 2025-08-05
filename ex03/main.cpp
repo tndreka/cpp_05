@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/05 17:04:51 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/05 17:22:38 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,8 +334,37 @@ int main()
 	}
 	
 	std::cout << " ------- TEST 2 -------------\n";
+	try
+	{
+		Intern RandomIntern;
+		AForm* f;
+		f = RandomIntern.makeForm("Shrubbery Creation", "bery");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << " ------- TEST 3 -------------\n";
+	try
+	{
+		Intern Intern;
+		AForm* rf;
+		rf = Intern.makeForm("Presidential Pardon", "Convict");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << " ------- TEST 4 -------------\n";
-	std::cout << " ------- TEST 5 -------------\n";
+	try
+	{
+		Intern something;
+		AForm* r;
+		r = something.makeForm("Robotomy ", "Bender");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
     return 0;
 }
