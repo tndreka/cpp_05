@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:39:19 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 16:26:04 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/18 15:10:44 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,12 @@ int main()
 		Bureaucrat john("John", 50);
 		Form tax("Tax", 40, 30);
 		
+		
 		std::cout << john << std::endl;
 		std::cout << tax  << std::endl;
 
 		john.signForm(tax);
+		// john.signForm(tax);
 		std::cout << tax  << std::endl;
 	}
 	catch(const std::exception& e)

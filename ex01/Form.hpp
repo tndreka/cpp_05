@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:06:49 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 13:53:39 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/08/18 15:02:09 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,20 @@ public:
 	int getSignedGrade() const;
 	int getExecGrade() const;
 	//exception class
-	class GradeTooHigh : public std::exception
+	class GradeTooHighException : public std::exception
 	{
 		public:
 			virtual const char* what() const noexcept;	
 	};
-	class GradeTooLow : public std::exception
+	class GradeTooLowException : public std::exception
 	{
 		public:
 			virtual const char* what() const noexcept;	
+	};
+	class IsAlreadySigned : public std::exception
+	{
+		public:
+			virtual const char* what() const noexcept;
 	};
 };
 
