@@ -6,7 +6,7 @@
 /*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:06 by tndreka           #+#    #+#             */
-/*   Updated: 2025/07/31 16:01:52 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/09/02 14:23:35 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::setGrade(int n)
 {
 	if (n < 1)
-		throw GradeTooHigh();
+		throw GradeTooHighException();
 	else if ( n > 150)
-		throw GradeTooLow();
+		throw GradeTooLowException();
 	grade = n;
 }
 
@@ -77,12 +77,12 @@ void Bureaucrat::setGrade(int n)
 	-> throw: 
 			Program throw the exception when the problem shows up.
 */
-const char* Bureaucrat::GradeTooLow::what() const noexcept
+const char* Bureaucrat::GradeTooLowException::what() const noexcept
 {
 	return "Grade Too Low";
 }
 
-const char* Bureaucrat::GradeTooHigh::what() const noexcept
+const char* Bureaucrat::GradeTooHighException::what() const noexcept
 {
 	return "Grade Too High";
 }
@@ -90,14 +90,14 @@ const char* Bureaucrat::GradeTooHigh::what() const noexcept
 int Bureaucrat::increment()
 {	
 	if (grade <= 1)
-		throw GradeTooHigh();
+		throw GradeTooHighException();
 	return --grade;
 }
 
 int Bureaucrat::decrement()
 {
 	if (grade >= 150)
-		throw GradeTooLow();
+		throw GradeTooLowException();
 	return ++grade;
 }
 

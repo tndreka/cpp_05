@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tndreka <tndreka@student.42heilbronn.de    +#+  +:+       +#+        */
+/*   By: tndreka < tndreka@student.42heilbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 14:41:12 by tndreka           #+#    #+#             */
-/*   Updated: 2025/08/02 22:08:50 by tndreka          ###   ########.fr       */
+/*   Updated: 2025/09/02 14:22:48 by tndreka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ class Bureaucrat
 		int increment();
 		int decrement();
 	//Exception
-		class GradeTooHigh : public std::exception
+		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char* what() const noexcept;		
 		};
-		class GradeTooLow : public std::exception
+		class GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char* what() const noexcept;		
